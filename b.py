@@ -1,16 +1,27 @@
 #!/usr/bin/env python3
 
 import argparse
+from dat import load_data, save_data
+from util import call_logger
 
 with open("wap.txt", "rt") as f:
     content = f.read()
 
 
+@call_logger
 def add_char(char):
     # count the instance of char and put them in the character json
-    words = content.split()
-    count = len([a for a in words if a == char])
-    print(count, char)
+    try:
+        characters = load_data("characters")
+    except:
+        characters = {}
+    if char not in characters:
+        words = content.split()
+        count = len([a for a in words if a == char])
+        characters[char] = count
+        save_data("characters", characters)
+
+    print(characters)
 
 
 if __name__ == "__main__":

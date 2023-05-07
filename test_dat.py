@@ -1,4 +1,5 @@
 from dat import save_data, load_data
+import logging
 
 test_data_key = "test_data"
 
@@ -11,6 +12,8 @@ def test_save_data():
 
 def test_load_data():
     data = load_data(test_data_key)
+    print(data)
+    logging.warning(data)
     assert len(data) > 0
 
 
