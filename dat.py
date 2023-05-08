@@ -5,7 +5,7 @@ from util import call_logger
 data_dir = "./data"
 
 
-@call_logger
+# @call_logger
 def load_data(name):
     path = f"{data_dir}/data_{name}.pkl"
     print(path)
@@ -15,7 +15,7 @@ def load_data(name):
     return content
 
 
-@call_logger
+# @call_logger
 def save_data(name, content):
     path = f"{data_dir}/data_{name}.pkl"
     print(path)
