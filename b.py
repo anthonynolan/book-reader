@@ -16,6 +16,12 @@ def _load_chars():
     return characters
 
 
+def delete_char(char):
+    characters = _load_chars()
+    del characters[char]
+    save_data("characters", characters)
+
+
 def list_chars():
     characters = _load_chars()
     for k, v in characters.items():
@@ -29,25 +35,22 @@ def add_char(char):
 
     # pdb.set_trace()
     characters = _load_chars()
-    print(characters)
     if char not in characters:
         words = content.split()
         count = len([a for a in words if a == char])
         characters[char] = count
         save_data("characters", characters)
 
-    print(characters)
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        prog="ProgramName",
-        description="What the program does",
-        epilog="Text at the bottom of help",
+        prog="./b.py",
+        description="Used to scan books to help you gain context.",
+        epilog="By Anthony Nolan",
     )
 
-    parser.add_argument("action")
-    parser.add_argument("character")
+    parser.add_argument("action", choices=["count", "list", "delete-char"])
+    parser.add_argument("--character", "-c")
 
     args = parser.parse_args()
 
@@ -56,3 +59,6 @@ if __name__ == "__main__":
 
     if args.action == "list":
         list_chars()
+
+    if args.action == "delete-char":
+        delete_char(args.character)
