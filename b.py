@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
+import logging
 from dat import load_data, save_data
-from util import call_logger
+from util import call_logger, find_named_entities
 
 with open("wap.txt", "rt") as f:
     content = f.read()
@@ -43,13 +44,16 @@ def add_char(char):
 
 
 if __name__ == "__main__":
+    br = logging.getLogger("book-reader")
+    br.setLevel("DEBUG")
+    br.debug("test log")
     parser = argparse.ArgumentParser(
         prog="./b.py",
         description="Used to scan books to help you gain context.",
         epilog="By Anthony Nolan",
     )
 
-    parser.add_argument("action", choices=["count", "list", "delete-char"])
+    parser.add_argument("action", choices=["count", "list", "delete-char", "ner"])
     parser.add_argument("--character", "-c")
 
     args = parser.parse_args()
@@ -59,6 +63,9 @@ if __name__ == "__main__":
 
     if args.action == "list":
         list_chars()
+
+    if args.action == "ner":
+        find_named_entities()
 
     if args.action == "delete-char":
         delete_char(args.character)
