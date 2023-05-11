@@ -4,7 +4,9 @@ import argparse
 import logging
 from dat import load_data, save_data
 from util import call_logger, find_named_entities
+import os
 
+print(os.getcwd())
 with open("wap.txt", "rt") as f:
     content = f.read()
 
@@ -43,6 +45,11 @@ def add_char(char):
         save_data("characters", characters)
 
 
+@call_logger
+def run_test(a="anthony"):
+    print(f"{a} TEST")
+
+
 if __name__ == "__main__":
     br = logging.getLogger("book-reader")
     br.setLevel("DEBUG")
@@ -53,7 +60,9 @@ if __name__ == "__main__":
         epilog="By Anthony Nolan",
     )
 
-    parser.add_argument("action", choices=["count", "list", "delete-char", "ner"])
+    parser.add_argument(
+        "action", choices=["count", "list", "delete-char", "ner", "test"]
+    )
     parser.add_argument("--character", "-c")
 
     args = parser.parse_args()
@@ -69,3 +78,6 @@ if __name__ == "__main__":
 
     if args.action == "delete-char":
         delete_char(args.character)
+
+    if args.action == "test":
+        run_test("ted")

@@ -6,8 +6,8 @@ from transformers import pipeline
 
 def call_logger(f):
     def log_write(*args):
-        logging.info(f"{f.__name__} was called with {args}")
-        return f(args)
+        print(f"{f.__name__} was called with {args}")
+        return f()
 
     return log_write
 
