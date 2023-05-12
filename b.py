@@ -31,7 +31,7 @@ def list_chars():
         print(f"{k} appears {v} times")
 
 
-# @call_logger
+@call_logger
 def add_char(char):
     # count the instance of char and put them in the character json
     import pdb
@@ -51,9 +51,13 @@ def run_test(a="anthony"):
 
 
 if __name__ == "__main__":
-    br = logging.getLogger("book-reader")
-    br.setLevel("DEBUG")
-    br.debug("test log")
+    logger = logging.getLogger("book-reader")
+    logging.basicConfig(
+        filename="book-reader.log",
+        level=logging.DEBUG,
+        format="%(levelname)s %(name)s %(asctime)s %(message)s",
+    )
+    logger.debug("test log")
     parser = argparse.ArgumentParser(
         prog="./b.py",
         description="Used to scan books to help you gain context.",

@@ -1,0 +1,9 @@
+DEBUG:root:test log
+2023-05-12 07:30:30,066 test log
+DEBUG root 2023-05-12 07:32:14,552 test log
+DEBUG book-reader 2023-05-12 07:35:16,819 test log
+DEBUG book-reader 2023-05-12 07:37:03,049 test log
+DEBUG root 2023-05-12 07:37:03,051 ner called
+DEBUG urllib3.connectionpool 2023-05-12 07:37:03,063 Starting new HTTPS connection (1): huggingface.co:443
+DEBUG urllib3.connectionpool 2023-05-12 07:37:03,425 https://huggingface.co:443 "HEAD /dslim/bert-base-NER/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+DEBUG urllib3.connectionpool 2023-05-12 07:37:03,572 https://huggingface.co:443 "HEAD /dslim/bert-base-NER/resolve/main/config.json HTTP/1.1" 200 0
