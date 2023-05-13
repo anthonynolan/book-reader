@@ -5,3 +5,6 @@ from django.db import models
 
 class Thing(models.Model):
     thing_name = models.TextField(max_length=50)
+
+    def __str__(self):
+        return self.thing_name
