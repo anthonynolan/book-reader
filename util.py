@@ -9,7 +9,9 @@ def call_logger(f):
     def log_write(*args):
         start = time()
         result = f()
-        logging.debug(f"fn: {f.__name__}({args}). [{(time()-start)*1000:.2f}ms]")
+        logging.debug(
+            f"{__name__}.fn: {f.__name__}({args}). [{(time()-start)*1000:.2f}ms]"
+        )
         return result
 
     return log_write

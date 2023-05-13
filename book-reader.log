@@ -7,3 +7,8 @@ DEBUG root 2023-05-12 07:37:03,051 ner called
 DEBUG urllib3.connectionpool 2023-05-12 07:37:03,063 Starting new HTTPS connection (1): huggingface.co:443
 DEBUG urllib3.connectionpool 2023-05-12 07:37:03,425 https://huggingface.co:443 "HEAD /dslim/bert-base-NER/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
 DEBUG urllib3.connectionpool 2023-05-12 07:37:03,572 https://huggingface.co:443 "HEAD /dslim/bert-base-NER/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG book-reader 2023-05-13 07:27:49,806 test log
+DEBUG book-reader 2023-05-13 07:28:03,566 test log
+DEBUG root 2023-05-13 07:28:03,568 fn: run_test(('ted',)). [0.13ms]
+DEBUG book-reader 2023-05-13 07:29:03,541 test log
+DEBUG root 2023-05-13 07:29:03,543 utilfn: run_test(('ted',)). [0.04ms]
