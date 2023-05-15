@@ -1,0 +1,8 @@
+{% if latest_thing_list %}
+<ul>
+  {% for thing in latest_thing_list %} 
+  <li><a href="/polls/{{ thing.id }}/">{{ thing.thing_name }}</a>
+  {% endfor %}
+</ul>
+
+{% endif %}
