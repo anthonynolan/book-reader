@@ -1,0 +1,8 @@
+{% load static%}
+
+<link rel="stylesheet" href="{% static 'loader/style.css' %}">
+
+{% if book %}
+<h1>{{book.title}}</h1>
+<p class='toned-down'>ID: {{book.id}}</p>
+{% endif %}

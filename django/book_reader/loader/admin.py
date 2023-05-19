@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Thing, Book
+from .models import Book
 
-admin.site.register(Thing)
 admin.site.register(Book)
