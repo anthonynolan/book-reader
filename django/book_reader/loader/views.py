@@ -14,3 +14,14 @@ def index(request):
 def book_detail(request, book_id):
     book = Book.objects.get(pk=book_id)
     return render(request, "loader/book_detail.html", {"book": book})
+
+
+def generate_stats(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    stats = {}
+    if book.description:
+        stats["word_count"] = book.description.split()
+    import json
+
+    book.stats = json.dumps(stats)
+    return render(request, "loader/book_stats.html", {"book": book})

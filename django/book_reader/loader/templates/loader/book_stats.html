@@ -1,9 +1,9 @@
 {% load static%}
 
 <link rel="stylesheet" href="{% static 'loader/style.css' %}">
-
+<h1>Book stats</h1>
 {% if book %}
 <h1>{{book.title}}</h1>
+{{book.stats}}
 <p class='toned-down'>ID: {{book.id}}</p>
-<a href="/generate/{{book.id}}/">Generate book stats</a>
 {% endif %}
