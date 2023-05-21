@@ -1,3 +1,9 @@
+{% load static%}
+
+<link rel="stylesheet" href="{% static 'loader/style.css' %}">
+
+<script src="{% static 'loader/main.js' %}"></script>
+
 {% if books %}
 <ul>
   {% for book in books %} 

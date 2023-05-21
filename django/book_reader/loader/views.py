@@ -8,6 +8,7 @@ import pdb
 
 def index(request):
     books = Book.objects.all()
+    print("index")
     return render(request, "loader/list_books.html", {"books": books})
 
 
