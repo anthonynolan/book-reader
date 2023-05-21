@@ -5,5 +5,5 @@
 {% if book %}
 <h1>{{book.title}}</h1>
 <p class='toned-down'>ID: {{book.id}}</p>
-<a href="/generate/{{book.id}}/">Generate book stats</a>
+{{book.stats}}
 {% endif %}
