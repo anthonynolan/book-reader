@@ -1,9 +1,9 @@
-{% load static%}
+{% extends 'loader/base.html' %}
 
-<link rel="stylesheet" href="{% static 'loader/style.css' %}">
-
+{% block 'content'%}
 {% if book %}
 <h1>{{book.title}}</h1>
 <p class='toned-down'>ID: {{book.id}}</p>
 {{book.stats}}
 {% endif %}
+{% endblock %}

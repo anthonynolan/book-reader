@@ -1,9 +1,6 @@
-{% load static%}
+{% extends 'loader/base.html' %}
 
-<link rel="stylesheet" href="{% static 'loader/style.css' %}">
-
-<script src="{% static 'loader/main.js' %}"></script>
-
+{% block 'content'%}
 {% if books %}
 <ul>
   {% for book in books %} 
@@ -11,3 +8,4 @@
   {% endfor %}
 </ul>
 {% endif %}
+{% endblock %}

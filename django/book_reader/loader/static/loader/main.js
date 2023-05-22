@@ -1,6 +1,10 @@
 const doc = document.documentElement;
 const events = [];
+
+const eventHappened = (e) => {
+  events.push({ date: Date.now(), type: e.type, target: e.target });
+};
+
 doc.addEventListener("click", (e) => {
-  events.push(e);
-  console.log("test" + e);
+  eventHappened(e);
 });
